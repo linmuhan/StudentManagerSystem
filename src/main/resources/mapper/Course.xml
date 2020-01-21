@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.CourseMapper">
+    <insert id="add" parameterType="Course" >
+	        insert into Course
+	        values (null,#{cno},#{cname},#{class_hour},#{credit});
+	 </insert>
+
+    <update id="alterAuto">
+        alter table Course AUTO_INCREMENT = 1;
+    </update>
+
+    <delete id="delete" parameterType="Course">
+	        delete from Course where id = #{id}
+	</delete>
+
+    <update id="updateId" parameterType="Course">
+        update Course set id = id-1 where id > #{id}
+    </update>
+
+    <select id="get" parameterType="Course" resultType="Course">
+	        select * from Course where cno= #{cno}
+	</select>
+
+    <update id="update" parameterType="Course" >
+                update Course set
+                cno = #{cno},
+                cname = #{cname},
+                class_hour = #{class_hour},
+                credit = #{credit}
+                where cno = #{cno}
+    </update>
+    <select id="list" resultType="Course">
+            select * from   Course
+        </select>
+    <select id="likeList" resultType="Course" parameterType="string">
+        select * from Course where CONCAT(id,cno,cname,class_hour,credit) like concat('%',#{likeKey},'%')
+    </select>
+</mapper>
+

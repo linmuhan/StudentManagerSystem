@@ -1,0 +1,62 @@
+div.title{
+    font-size: 38px;
+    text-align: center;
+}
+div.search_btn{
+    margin: 30px auto;
+    width: 260px;
+}
+
+/*学生增加信息模态窗口*/
+div.studentForm{
+    margin: 15px auto;
+}
+div.studentForm input{
+    border:0;
+    border-bottom: 1px solid;
+    outline: none;
+    margin-left: 10px;
+}
+div.studentFormBox{
+    width: 280px;
+    height: 250px;
+    margin: 10px auto;
+}
+
+/*课程增加信息模态窗口*/
+div.courseForm{
+    margin: 15px auto;
+}
+div.courseForm input{
+    border:0;
+    border-bottom: 1px solid;
+    outline: none;
+    margin-left: 10px;
+}
+div.courseFormBox{
+    width: 280px;
+    height: 130px;
+    margin: 10px auto;
+}
+select.courseSelect{
+    margin-left: 10px;
+}
+
+/*成绩增加信息模态窗口*/
+div.gradeForm{
+    margin: 15px auto;
+}
+div.gradeForm input{
+    border:0;
+    border-bottom: 1px solid;
+    outline: none;
+    margin-left: 10px;
+}
+div.gradeFormBox{
+    width: 280px;
+    height: 180px;
+    margin: 10px auto;
+}
+select.gradeSelect{
+    margin-left: 10px;
+}

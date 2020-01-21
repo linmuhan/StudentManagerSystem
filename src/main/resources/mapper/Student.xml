@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.StudentMapper">
+    <insert id="add" parameterType="Student" >
+	        insert into Student(sno,sname,gender,birth,classes,major,college)
+	        values (#{sno},#{sname},#{gender},#{birth},#{classes},#{major},#{college})
+	    </insert>
+
+    <delete id="delete" parameterType="Student" >
+	        delete from Student where sno = #{sno}
+	    </delete>
+
+    <select id="get" parameterType="Student" resultType="Student">
+	        select * from Student where sno= #{sno}
+	    </select>
+        <update id="update" parameterType="Student" >
+                update Student set
+                sno=#{sno},
+                sname=#{sname},
+                gender=#{gender},
+                birth=#{birth},
+                classes=#{classes},
+                major=#{major},
+                college=#{college} where sno = #{sno}
+            </update>
+        <select id="list" resultType="Student">
+            select * from   Student
+        </select>
+    <select id="likeList" resultType="Student" parameterType="String">
+        select * from student where CONCAT(sno,sname,gender,birth,classes,major,college) like  concat('%',#{likeKey},'%')
+    </select>
+</mapper>
+
